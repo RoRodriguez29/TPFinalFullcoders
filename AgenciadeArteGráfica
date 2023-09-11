@@ -1,0 +1,84 @@
+Algoritmo GestionDeTurnosRoRoArteGrafica
+    Definir turnoLunes, turnoMartes, turnoMiercoles, turnoJueves, turnoViernes, turnoSabado Como Cadena
+    Definir hrInicio, hrFin, hrActual Como Entero
+    Definir opcionMenu Como Entero
+	
+    // Inicializar los turnos como "Disponible" al comienzo
+    turnoLunes <- "Disponible"
+    turnoMartes <- "Disponible"
+    turnoMiercoles <- "Disponible"
+    turnoJueves <- "Disponible"
+    turnoViernes <- "Disponible"
+    turnoSabado <- "Disponible"
+	
+    Escribir"+----------------------------------------------------------------------------+"
+    Escribir"| Bienvenido al sistema de gestión de turnos de RoRo agencia de arte gráfica |"
+    Escribir"+----------------------------------------------------------------------------+"
+	
+    Repetir
+        Escribir("1. Reservar turno")
+        Escribir("0. Salir")
+        Leer opcionMenu
+		Si opcionMenu = 1 Entonces
+            Escribir("Ingrese el día de la semana (1: Lunes, 2: Martes, 3: Miércoles, 4: Jueves, 5: Viernes, 6: Sábado):")
+            Leer diaElegido
+			
+            Si diaElegido >= 1 Y diaElegido <= 6 Entonces
+                Escribir("Ingrese la hora del turno (9 - 17):")
+                Leer horaElegida
+				
+                Si horaElegida >= 9 Y horaElegida <= 17 Entonces
+                    // Verificar si el turno está disponible
+                    Si diaElegido = 1 Entonces
+                        Si turnoLunes = "Disponible" Entonces
+                            turnoLunes <- "Reservado"
+                            Escribir("Turno reservado exitosamente.")
+                        Sino
+                            Escribir("El turno seleccionado ya está ocupado. Por favor, elija otro.")
+                        Fin Si
+                    Sino Si diaElegido = 2 Entonces
+							Si turnoMartes = "Disponible" Entonces
+								turnoMartes <- "Reservado"
+								Escribir("Turno reservado exitosamente.")
+							Sino
+								Escribir("El turno seleccionado ya está ocupado. Por favor, elija otro.")
+							Fin Si
+						Sino Si diaElegido = 3 Entonces
+								Si turnoMiercoles = "Disponible" Entonces
+									turnoMiercoles <- "Reservado"
+									Escribir("Turno reservado exitosamente.")
+								Sino
+									Escribir("El turno seleccionado ya está ocupado. Por favor, elija otro.")
+								Fin Si
+							Sino Si diaElegido = 4 Entonces
+									Si turnoJueves = "Disponible" Entonces
+										turnoJueves <- "Reservado"
+										Escribir("Turno reservado exitosamente.")
+									Sino
+										Escribir("El turno seleccionado ya está ocupado. Por favor, elija otro.")
+									Fin Si
+								Sino Si diaElegido = 5 Entonces
+										Si turnoViernes = "Disponible" Entonces
+											turnoViernes <- "Reservado"
+											Escribir("Turno reservado exitosamente.")
+										Sino
+											Escribir("El turno seleccionado ya está ocupado. Por favor, elija otro.")
+										Fin Si
+									Sino Si diaElegido = 6 Entonces
+											Si turnoSabado = "Disponible" Entonces
+												turnoSabado <- "Reservado"
+												Escribir("Turno reservado exitosamente.")
+											Sino
+												Escribir("El turno seleccionado ya está ocupado. Por favor, elija otro.")
+											Fin Si
+										Fin Si
+									Fin Si
+								Fin Si
+							Fin Si
+						Fin Si
+					Fin Si
+				Fin Si
+			Fin Si
+		Fin Si
+   Hasta Que opcionMenu = 0
+FinAlgoritmo
